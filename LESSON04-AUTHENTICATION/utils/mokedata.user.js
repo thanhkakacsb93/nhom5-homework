@@ -1,8 +1,8 @@
-const users = [
+let users = [
     {
         username: "admin",
         passwould: "123",
-        role: "admin"
+        role: "admin",
     }
 ]
 

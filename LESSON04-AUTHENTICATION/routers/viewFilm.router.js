@@ -1,10 +1,10 @@
 import express from "express"
 import MovieStore from "../utils/mokedata.film.js"
-import users from "../utils/mokedata.user.js"
+import middlewareAuthLogin from "../middleware/middleware.authLogin.js"
 
 const router = express.Router()
 
-router.get("/view", (req, res, nex) => {
+router.get("/view", middlewareAuthLogin, (req, res) => {
     res.json({
         data: MovieStore
     })

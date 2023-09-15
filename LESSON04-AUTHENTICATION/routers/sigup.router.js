@@ -1,17 +1,12 @@
 import express from "express"
+import middlewareSigup from "../middleware/middleware.sigup.js"
 import users from "../utils/mokedata.user.js"
 
 const router = express.Router()
 
-router.post("/sigup", (req, res) => {
-    const { username, passwoud } = req.body;
-    if (!username || !passwoud) {
-        res.status(400).json({
-            message: "Missing required keys",
-        });
-    }
+router.post("/sigup", middlewareSigup, (req, res) => {
     res.json({
-        message: "da them"
+        data: users
     })
 })
 

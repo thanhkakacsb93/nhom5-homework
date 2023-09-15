@@ -1,4 +1,4 @@
-const MovieStore = [
+let MovieStore = [
     {
         "id": 1,
         "name": "Titanic",
