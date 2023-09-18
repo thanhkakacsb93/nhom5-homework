@@ -1,4 +1,9 @@
 let MovieStore = [
+    // export default MovieStore = [
+    // export [
+
+
+
     {
         "id": 1,
         "name": "Titanic",
@@ -10,9 +15,19 @@ let MovieStore = [
         "isFree": false
     },
     {
+        "id": 1,
+        "name": "Titanic",
+        "isFree": true
+    },
+    {
         "id": 3,
         "name": "Iron Man",
         "isFree": false
+    },
+    {
+        "id": 1,
+        "name": "Titanic",
+        "isFree": true
     },
     {
         "id": 4,

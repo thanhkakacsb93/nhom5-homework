@@ -18,6 +18,12 @@ router.post("/authLogin", (req, res) => {
             message: "username or passwould wrong"
         })
     }
+
+    // if (!checkUserLogin.confirmation) {
+    //     res.status(400).json({
+    //         message: "unconfirmed user"
+    //     })
+    // }
     //phat hanh ve 
     const payload = {
         username: checkUserLogin.username,
@@ -30,7 +36,7 @@ router.post("/authLogin", (req, res) => {
     })
 
     res.json({
-        message: "thanhkaka",
+        message: "đăng nhập thành công",
         accesstoken: token
     })
 

@@ -1,12 +1,38 @@
 import express from "express"
 import middlewareSigup from "../middleware/middleware.sigup.js"
 import users from "../utils/mokedata.user.js"
+import jwt from "jsonwebtoken"
 
 const router = express.Router()
 
-router.post("/sigup", middlewareSigup, (req, res) => {
+// router.post("/sigup", middlewareSigup, (req, res) => {
+router.post("/sigup", (req, res) => {
+    const { username, passwould } = req.body;
+    if (!username || !passwould) {
+        res.status(400).json({
+            message: "Missing required keys",
+        });
+    }
+    const checkUserSigup = users.find((item) => item.username === username)
+    if (checkUserSigup) {
+        res.json({
+            message: "username already exists"
+        })
+    }
+
+    const payload = {
+        username,
+        passwould,
+        role: "member",
+        // confirmation: true
+    }
+    const KEY = process.env.KEY_SIGUP
+    const token = jwt.sign(payload, KEY, {
+        expiresIn: process.env.TIME_KEY_SIGUP
+    })
+
     res.json({
-        data: users
+        accesstoken: token
     })
 })
 
