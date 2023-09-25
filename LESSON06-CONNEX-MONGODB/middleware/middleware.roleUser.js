@@ -15,7 +15,6 @@ const middlewareRoleUser = async (req, res, next) => {
         const AllFilm = await filmModel.find({})
         res.json({
             data: AllFilm,
-            message: "fsfaf"
         })
 
     } catch (error) {
