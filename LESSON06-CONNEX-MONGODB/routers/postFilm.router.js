@@ -1,9 +1,8 @@
 import express from "express"
+import controllerAuthentUser from "../controllers/controller.authenUser.js"
 import middlewareAuthAdm from "../middleware/middleware.autAdm.js"
-import middlewarePostFilm from "../middleware/middleware.postFilm.js"
 const router = express.Router()
 
-router.post("/", middlewarePostFilm, (req, res) => {
-    console.log("first")
-})
+router.post("/", middlewareAuthAdm, controllerAuthentUser.PostFilm)
+
 export default router

@@ -1,11 +1,8 @@
 import express from "express"
-import middlewareSigup from "../middleware/middleware.sigup.js"
+import controllerAuthentUser from "../controllers/controller.authenUser.js"
 
 
 const router = express.Router()
-
-router.post("/sigup", middlewareSigup, (req, res) => {
-
-})
+router.post("/sigup", controllerAuthentUser.Sigup)
 
 export default router

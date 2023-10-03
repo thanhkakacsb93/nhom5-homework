@@ -1,10 +1,8 @@
 import express from "express"
-import middlewareRoleUser from "../middleware/middleware.roleUser.js"
+import controllerAuthentUser from "../controllers/controller.authenUser.js"
 
 const router = express.Router()
 
-router.get("/view", middlewareRoleUser, (req, res) => {
-
-})
+router.get("/view", controllerAuthentUser.viewListfilm)
 
 export default router

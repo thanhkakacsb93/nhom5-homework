@@ -1,13 +1,6 @@
 import express from "express"
-import confirmation from "../middleware/middle.confirmation.js"
+import controllerAuthentUser from "../controllers/controller.authenUser.js"
 
 const router = express.Router()
-
-router.put("/confirmationUser", confirmation, (req, res) => {
-
-    res.json({
-        message: "tài khoản đã được kích hoạt"
-    })
-
-})
+router.put("/confirmationUser", controllerAuthentUser.confirmation)
 export default router

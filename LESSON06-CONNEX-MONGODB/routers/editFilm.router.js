@@ -1,12 +1,8 @@
 import express from "express"
+import controllerAuthentUser from "../controllers/controller.authenUser.js"
 import middlewareAuthAdm from "../middleware/middleware.autAdm.js"
-import middlewareUpdateFilm from "../middleware/middleware.updateFilm.js"
 const router = express.Router()
 
-router.patch("/:namefilm", middlewareUpdateFilm, (req, res) => {
+router.patch("/:namefilm", middlewareAuthAdm, controllerAuthentUser.UpdateFilm)
 
-    res.json({
-        message: "đã cập nhật"
-    })
-})
 export default router
